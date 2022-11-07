@@ -1,3 +1,5 @@
+
+
 function getComputerChoice(){
     let computerChoice=Math.random();//generates a random number between 1 and 0
     if (computerChoice > 0 && computerChoice < .333){ //defines random numbers into rock, paper, scissor choices
@@ -8,8 +10,12 @@ function getComputerChoice(){
         return 'scissors'
     }
 }
-console.log(getComputerChoice());
+let playerSelection = prompt('Rock, Paper, or Scissors?');
+let computerSelection=getComputerChoice();
 
-//Ask for player selection
+function playRound(playerSelection, computerSelection){//Ask for player selection
+
+}
+
 //Establish hierarchy of rock, paper, and scissors
 //Return 'You Win' vs. The Computer win based on that hierarchy.

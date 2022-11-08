@@ -1,6 +1,4 @@
-
-
-function getComputerChoice(){
+function getComputerChoice(){//get random computer choice
     let computerChoice=Math.random();//generates a random number between 1 and 0
     if (computerChoice > 0 && computerChoice < .333){ //defines random numbers into rock, paper, scissor choices
         return 'rock';
@@ -10,12 +8,16 @@ function getComputerChoice(){
         return 'scissors';
     }
 }
-let playerSelection = prompt('Rock, Paper, or Scissors?'); //Ask for player selection
+getPlayerChoice(){
+    prompt('Rock, Paper, or Scissors?').toLowerCase();
+}//get player selection
+let playerSelection=getPlayerChoice;
 let computerSelection=getComputerChoice();
 let playerScore=0;
 let computerScore=0;
 
 function playRound(computerSelection, playerSelection){ //Establish hierarchy of rock, paper, and scissors
+    
     if (computerSelection === playerSelection){
         return 'Tie';
     }
@@ -42,17 +44,6 @@ function playRound(computerSelection, playerSelection){ //Establish hierarchy of
 
 function game(){
 for (let i =0; i <5; i++){//loop
-    //need to call playRound somehow in here
-    if (computerScore>playerScore){//scoring logic
-        return "You lose!";
-    } else if (playerScore<computerScore){
-        return "You beat the computer!";
-    } else {
-        return "You tied."
-    }
-    }
+    playRound(playerSelection, computerSelection);
+}   
 }
-
-console.log (playRound(computerSelection,playerSelection));
-console.log (playerScore);
-console.log (computerScore);

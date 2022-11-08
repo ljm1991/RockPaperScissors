@@ -12,7 +12,7 @@ function getComputerChoice(){
 }
 let playerSelection = prompt('Rock, Paper, or Scissors?'); //Ask for player selection
 let computerSelection=getComputerChoice();
-let playerScore=0;
+let userScore=0;
 let computerScore=0;
 
 function playRound(computerSelection, playerSelection){ //Establish hierarchy of rock, paper, and scissors

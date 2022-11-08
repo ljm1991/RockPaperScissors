@@ -40,6 +40,18 @@ function playRound(computerSelection, playerSelection){ //Establish hierarchy of
 } //Return 'You Win' vs. The Computer win based on that hierarchy.
 }
 
+function game(){
+for (let i =0; i <5; i++){//loop
+    //need to call playRound somehow in here
+    if (computerScore>playerScore){//scoring logic
+        return "You lose!";
+    } else if (playerScore<computerScore){
+        return "You beat the computer!";
+    } else {
+        return "You tied."
+    }
+    }
+}
 
 console.log (playRound(computerSelection,playerSelection));
 console.log (playerScore);

@@ -12,7 +12,7 @@ function getComputerChoice(){
 }
 let playerSelection = prompt('Rock, Paper, or Scissors?'); //Ask for player selection
 let computerSelection=getComputerChoice();
-let userScore=0;
+let playerScore=0;
 let computerScore=0;
 
 function playRound(computerSelection, playerSelection){ //Establish hierarchy of rock, paper, and scissors
@@ -20,13 +20,13 @@ function playRound(computerSelection, playerSelection){ //Establish hierarchy of
         return 'Tie';
     }
     else if (computerSelection=='rock' && playerSelection=='paper'){
-        userScore++;
+        playerScore++;
         return 'You win! Paper beats rock!';
     } else if (computerSelection == 'paper' && playerSelection=='scissors'){
-        userScore++;
+        playerScore++;
         return 'You win! Scissors beats paper!';
     } else if (computerSelection == 'scissors' && playerSelection=='rock'){
-        userScore++;
+        playerScore++;
         return 'You win! Rock beats Scissors!';
     } else if (computerSelection=='rock' && playerSelection=='scissors'){
         computerScore++;

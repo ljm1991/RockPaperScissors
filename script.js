@@ -8,7 +8,10 @@ function getComputerChoice(){//get random computer choice
         return 'scissors';
     }
 }
-let getPlayerChoice = prompt('Rock, Paper, or Scissors?').toLowerCase();//get player selection
+function getPlayerChoice() {
+    return prompt('Rock, Paper, or Scissors?').toLowerCase();
+}
+//get player selection
 let computerSelection=getComputerChoice();
 let playerScore=0;
 let computerScore=0;

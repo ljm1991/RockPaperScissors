@@ -12,7 +12,6 @@ function getPlayerChoice() {
     return prompt('Rock, Paper, or Scissors?').toLowerCase();
 }
 //get player selection
-let computerSelection=getComputerChoice();
 let playerScore=0;
 let computerScore=0;
 
@@ -42,7 +41,7 @@ function playRound(computerSelection, playerSelection){ //Establish hierarchy of
 }
 
 function game(){//play game
-for (let i =0; i <5; i++){//loop
+    for (let i =0; i <5; i++){//loop
     let playerSelection= getPlayerChoice(); 
     let computerSelection= getComputerChoice();
     console.log(playRound(playerSelection, computerSelection));
@@ -52,12 +51,12 @@ for (let i =0; i <5; i++){//loop
 
 function finalScore(playerScore, computerScore) {//add scoring
     if (playerScore === computerScore){
-        return `The game ends in a tie.`;
+        return `The game ends in a tie. ${playerScore} to ${computerScore}`;
     } else if (playerScore > computerScore){
-        return `Amazing! You beat the computer.`;//calculate and return score
+        return `Amazing! You beat the computer ${playerScore} to ${computerScore}.`;//calculate and return score
     }else {
-        return `Ouch. You lose to the computer.`;
+        return `Ouch. You lost to the computer ${computerScore} to ${playerScore}.`;
     }
 }
 
-game ();
+game();

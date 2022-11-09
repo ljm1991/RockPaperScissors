@@ -41,11 +41,23 @@ function playRound(computerSelection, playerSelection){ //Establish hierarchy of
 } //Return 'You Win' vs. The Computer win based on that hierarchy.
 }
 
-function game(){
+function game(){//play game
 for (let i =0; i <5; i++){//loop
     let playerSelection= getPlayerChoice(); 
     let computerSelection= getComputerChoice();
     console.log(playRound(playerSelection, computerSelection));
 }
+    console.log(finalScore(playerScore, computerScore));
 }
+
+function finalScore(playerScore, computerScore) {//add scoring
+    if (playerScore === computerScore){
+        return `The game ends in a tie.`;
+    } else if (playerScore > computerScore){
+        return `Amazing! You beat the computer.`;//calculate and return score
+    }else {
+        return `Ouch. You lose to the computer.`;
+    }
+}
+
 game ();

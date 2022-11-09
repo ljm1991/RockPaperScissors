@@ -8,16 +8,12 @@ function getComputerChoice(){//get random computer choice
         return 'scissors';
     }
 }
-getPlayerChoice(){
-    prompt('Rock, Paper, or Scissors?').toLowerCase();
-}//get player selection
-let playerSelection=getPlayerChoice;
+let getPlayerChoice = prompt('Rock, Paper, or Scissors?').toLowerCase();//get player selection
 let computerSelection=getComputerChoice();
 let playerScore=0;
 let computerScore=0;
 
 function playRound(computerSelection, playerSelection){ //Establish hierarchy of rock, paper, and scissors
-    
     if (computerSelection === playerSelection){
         return 'Tie';
     }
@@ -44,6 +40,9 @@ function playRound(computerSelection, playerSelection){ //Establish hierarchy of
 
 function game(){
 for (let i =0; i <5; i++){//loop
-    playRound(playerSelection, computerSelection);
-}   
+    let playerSelection= getPlayerChoice(); 
+    let computerSelection= getComputerChoice();
+    console.log(playRound(playerSelection, computerSelection));
 }
+}
+game ();

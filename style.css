@@ -137,6 +137,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #9da9a7;
+    font-family: 'Roboto', sans-serif;
 }
 
 .container {
@@ -153,7 +154,7 @@ body {
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: bolder;
     margin: 10px;
 }
@@ -225,4 +226,11 @@ h4 {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#reset {
+    height: 20px;
+    width: 80px;
+    background-color: #f0b0c1;
+    border-radius: 10%;
 }

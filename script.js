@@ -1,8 +1,10 @@
-const buttons = document.querySelectorAll("button")
+const buttons = document.querySelectorAll(".choice")
 const roundScore = document.createElement("h3")
 const container = document.querySelector("#container")
 const results = document.querySelector("#results")
+const resetButton = document.querySelector("#reset")
 const scoreBoard = document.createElement("h4")
+const winner = document.querySelector("h2")
 scoreBoard.innerText = 'Current score is Player:0 to Computer:0'
 results.appendChild(scoreBoard);
 
@@ -13,9 +15,6 @@ let computerScore = 0;
 
 
 buttons.forEach((button) => {
-    if (computerScore === 5 || playerScore === 5) {
-        reset()
-    }
     button.addEventListener('click', () => {
         playerChoice = `${button.id}`
         computerChoice = getComputerChoice()
@@ -40,25 +39,25 @@ function getComputerChoice() {
 function playRound(playerChoice, computerChoice) { //Establish hierarchy of rock, paper, and scissors
     if (!gameOver) {
         if (computerChoice === playerChoice) {
-            roundScore.innerText = 'Tie'
+            roundScore.innerText = `Tie. You and Computer both chose ${playerChoice}`
         }
         else if (computerChoice == 'rock' && playerChoice == 'paper') {
-            roundScore.innerText = 'You win the round! Paper beats rock!';
+            roundScore.innerText = `You chose ${playerChoice} and Computer chose ${computerChoice}. Paper beats rock! You win the round! `;
             playerScore++
         } else if (computerChoice == 'paper' && playerChoice == 'scissors') {
-            roundScore.innerText = 'You win the round! Scissors beats paper!';
+            roundScore.innerText = `You chose ${playerChoice} and Computer chose ${computerChoice}. Scissors beats paper! You win the round!`;
             playerScore++
         } else if (computerChoice == 'scissors' && playerChoice == 'rock') {
-            roundScore.innerText = 'You win the round! Rock beats Scissors!';
+            roundScore.innerText = `You chose ${playerChoice} and Computer chose ${computerChoice}. Rock beats Scissors! You win the round!`;
             playerScore++
         } else if (computerChoice == 'rock' && playerChoice == 'scissors') {
-            roundScore.innerText = 'Computer wins the round! Rock beats scissors!';
+            roundScore.innerText = `You chose ${playerChoice} and Computer chose ${computerChoice}. Rock beats scissors! Computer wins the round!`;
             computerScore++
         } else if (computerChoice == 'paper' && playerChoice == 'rock') {
-            roundScore.innerText = 'Computer wins the round! Paper beats rock!';
+            roundScore.innerText = `You chose ${playerChoice} and Computer chose ${computerChoice}. Paper beats rock! Computer wins the round! `;
             computerScore++
         } else if (computerChoice == 'scissors' && playerChoice == 'paper') {
-            roundScore.innerText = 'Computer wins the round! Scissors beats paper!';
+            roundScore.innerText = `You chose ${playerChoice} and Computer chose ${computerChoice}. Scissors beats paper! Computer wins the round! `;
             computerScore++
         }
     }
@@ -72,18 +71,23 @@ function playRound(playerChoice, computerChoice) { //Establish hierarchy of rock
 
 function gameWin(playerScore, computerScore) {
     if (playerScore > computerScore) {
-        roundScore.innerText = `Amazing! You beat the computer ${playerScore} to ${computerScore}.`;//calculate and return score
+        winner.innerText = `Amazing! You beat the computer ${playerScore} to ${computerScore}.`;//calculate and return score
+        winner.style.color = "green";
     } else {
-        roundScore.innerText = `Ouch. You lost to the computer ${computerScore} to ${playerScore}.`;
+        winner.innerText = `Ouch. You lost to the computer ${computerScore} to ${playerScore}.`;
+        winner.style.color = "red";
     }
     gameOver = true;
 }
 
-// function reset() {
-//     playerScore = 0
-//     computerScore = 0
-//     scoreBoard.innerText = 'Current score is Player:0 to Computer:0'
-//     results.innerText = " "
-// }
+resetButton.addEventListener('click', () => {
+    gameOver = false
+    playerScore = 0
+    computerScore = 0
+    scoreBoard.innerText = 'Current score is Player:0 to Computer:0'
+    results.innerText = " "
+});
+
+
 
 

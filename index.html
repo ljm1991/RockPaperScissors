@@ -4,6 +4,11 @@
 <head>
     <meta charset="UTF-8" ?>
     <title>Rock Paper Scissors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,300;1,400;1,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -13,20 +18,21 @@
         <h2>Can you beat the computer to 5?</h2>
         <div id=choices>
             <div id="r">
-                <button id="rock"></button>
+                <button id="rock" class="choice"></button>
                 <h4>ROCK</h4>
             </div>
             <div id="p">
-                <button id="paper"></button>
+                <button id="paper" class="choice"></button>
                 <h4>PAPER</h4>
             </div>
             <div id="s">
-                <button id="scissors"></button>
+                <button id="scissors" class="choice"></button>
                 <h4>SCISSORS</h4>
             </div>
         </div>
         <div id="results">
         </div>
+        <button id="reset">RESET</button>
     </div>
     <script src="script.js"></script>
 </body>

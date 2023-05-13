@@ -87,4 +87,6 @@ resetButton.addEventListener('click', () => {
     computerScore = 0
     scoreBoard.innerText = " "
     results.innerText = " "
+    winner.innerText = "Can you beat the computer to 5?"
+    winner.style.color = "black"
 });

@@ -5,7 +5,7 @@ const results = document.querySelector("#results")
 const resetButton = document.querySelector("#reset")
 const scoreBoard = document.createElement("h4")
 const winner = document.querySelector("h2")
-scoreBoard.innerText = 'Current score is Player:0 to Computer:0'
+scoreBoard.innerText = ' '
 results.appendChild(scoreBoard);
 
 let gameOver = false;
@@ -42,22 +42,22 @@ function playRound(playerChoice, computerChoice) { //Establish hierarchy of rock
             roundScore.innerText = `Tie. You and Computer both chose ${playerChoice}`
         }
         else if (computerChoice == 'rock' && playerChoice == 'paper') {
-            roundScore.innerText = `You chose ${playerChoice} and Computer chose ${computerChoice}. Paper beats rock! You win the round! `;
+            roundScore.innerText = `Paper beats rock! You win the round! `;
             playerScore++
         } else if (computerChoice == 'paper' && playerChoice == 'scissors') {
-            roundScore.innerText = `You chose ${playerChoice} and Computer chose ${computerChoice}. Scissors beats paper! You win the round!`;
+            roundScore.innerText = `Scissors beats paper! You win the round!`;
             playerScore++
         } else if (computerChoice == 'scissors' && playerChoice == 'rock') {
-            roundScore.innerText = `You chose ${playerChoice} and Computer chose ${computerChoice}. Rock beats Scissors! You win the round!`;
+            roundScore.innerText = `Rock beats Scissors! You win the round!`;
             playerScore++
         } else if (computerChoice == 'rock' && playerChoice == 'scissors') {
-            roundScore.innerText = `You chose ${playerChoice} and Computer chose ${computerChoice}. Rock beats scissors! Computer wins the round!`;
+            roundScore.innerText = `Rock beats scissors! Computer wins the round!`;
             computerScore++
         } else if (computerChoice == 'paper' && playerChoice == 'rock') {
-            roundScore.innerText = `You chose ${playerChoice} and Computer chose ${computerChoice}. Paper beats rock! Computer wins the round! `;
+            roundScore.innerText = `Paper beats rock! Computer wins the round! `;
             computerScore++
         } else if (computerChoice == 'scissors' && playerChoice == 'paper') {
-            roundScore.innerText = `You chose ${playerChoice} and Computer chose ${computerChoice}. Scissors beats paper! Computer wins the round! `;
+            roundScore.innerText = `Scissors beats paper! Computer wins the round! `;
             computerScore++
         }
     }
@@ -78,16 +78,13 @@ function gameWin(playerScore, computerScore) {
         winner.style.color = "red";
     }
     gameOver = true;
+    buttons.style.opacity = "0.5";
 }
 
 resetButton.addEventListener('click', () => {
     gameOver = false
     playerScore = 0
     computerScore = 0
-    scoreBoard.innerText = 'Current score is Player:0 to Computer:0'
+    scoreBoard.innerText = " "
     results.innerText = " "
 });
-
-
-
-

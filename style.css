@@ -170,7 +170,11 @@ h2 {
     display: flex;
     width: 100%;
     justify-content: space-between;
+}
 
+.tag:hover,
+#reset:hover {
+    scale: 1.05;
 }
 
 button {
@@ -178,8 +182,8 @@ button {
     width: 200px;
     background-size: 200px 200px;
     background-repeat: no-repeat;
-
 }
+
 
 #rock {
     background-image: url(./images/rock.jpg);
